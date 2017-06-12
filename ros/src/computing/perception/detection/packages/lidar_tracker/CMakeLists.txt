@@ -214,7 +214,7 @@ if(EXISTS "/usr/local/cuda")
   else()
     set(CUDA_ARCH "sm_52")
   endif()
-
+  set(CUDA_PROPAGATE_HOST_FLAGS OFF)
   #QT Stuff
   # set(CMAKE_AUTOMOC ON)
   set(CMAKE_INCLUDE_CURRENT_DIR ON)

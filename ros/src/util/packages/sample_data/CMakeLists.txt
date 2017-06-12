@@ -8,7 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   visualization_msgs
 )
-pkg_check_modules(PCL_IO REQUIRED pcl_io-1.7)
+#pkg_check_modules(PCL_IO REQUIRED pcl_io-1.7)
+find_package (PCL 1.7 REQUIRED COMPONENTS io)
 pkg_check_modules(EIGEN3 REQUIRED eigen3)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2 -Wall ${CMAKE_CXX_FLAGS}")
@@ -33,7 +34,7 @@ include_directories(
   ${PCL_IO_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIRS}
 )
-
+message(STATUS "${PCL_IO_LIBRARIES}")
 add_executable(sample_points_map nodes/sample_points_map/sample_points_map.cpp)
 target_link_libraries(sample_points_map ${catkin_LIBRARIES} ${PCL_IO_LIBRARIES})
 
