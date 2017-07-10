@@ -250,7 +250,7 @@ if(EXISTS "/usr/local/cuda")
   INCLUDE(FindCUDA)
 
   if ("${ROS_VERSION}" MATCHES "(kinetic)")
-    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=${CUDA_ARCH})
+    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=${CUDA_ARCH};-std=c++11)
   else()
     set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=${CUDA_ARCH};-std=c++11)
   endif()

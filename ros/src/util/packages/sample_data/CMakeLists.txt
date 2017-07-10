@@ -8,8 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   visualization_msgs
 )
-#pkg_check_modules(PCL_IO REQUIRED pcl_io-1.7)
-find_package (PCL 1.7 REQUIRED COMPONENTS io)
+pkg_check_modules(PCL_IO REQUIRED pcl_io-1.7)
+#find_package (PCL 1.7 REQUIRED COMPONENTS io)
 pkg_check_modules(EIGEN3 REQUIRED eigen3)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2 -Wall ${CMAKE_CXX_FLAGS}")
